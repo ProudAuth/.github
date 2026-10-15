@@ -185,4 +185,18 @@ for slug, spec in CARDS.items():
     path.write_text(profile_card(*spec))
     subprocess.run(["rsvg-convert", str(path), "-o", str(out / f"card-{slug}.png")], check=True)
 
+# The "Start now" button on the profile page, on a transparent background.
+start = f"""<svg xmlns="http://www.w3.org/2000/svg" width="640" height="168" viewBox="0 0 640 168">
+{DEFS}
+<defs><filter id="soft" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="14"/></filter></defs>
+<rect x="44" y="40" width="552" height="96" rx="48" fill="#3ee6b0" fill-opacity=".45" filter="url(#soft)"/>
+<rect x="36" y="28" width="568" height="104" rx="52" fill="url(#mint)"/>
+<rect x="37" y="29" width="566" height="102" rx="51" fill="none" stroke="#ffffff" stroke-opacity=".45" stroke-width="2"/>
+{mark(84, 54, 52, fill="#06120e", ink="url(#mint)")}
+<text x="152" y="98" font-family="{FONT}" font-weight="700" font-size="46" fill="#06120e" letter-spacing="-1">Start now</text>
+<g transform="translate(548 80)"><circle r="30" fill="#06120e"/><path d="M-11 0h21m-8-8 8 8-8 8" fill="none" stroke="#3ee6b0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>"""
+(out / "button-start-now.svg").write_text(start)
+subprocess.run(["rsvg-convert", str(out / "button-start-now.svg"), "-o", str(out / "button-start-now.png")], check=True)
+
 print("brand kit written to", out)

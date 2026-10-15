@@ -20,36 +20,8 @@
   </tr>
 </table>
 
-## Start now
-
-Two files and one command. Copy `docker-compose.yaml` and `.env` from the
-**[Docker quickstart](https://proudauth.com/docs/getting-started/quickstart/)**,
-fill in `.env`, then:
-
-```sh
-docker compose up -d
-```
-
-## Repositories
-
 <p align="center">
-  <a href="https://github.com/ProudAuth/proudauth"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth.png" alt="proudauth: the identity server" width="49%"></a>
-  <a href="https://github.com/ProudAuth/proudauth-website"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-website.png" alt="proudauth-website: the site and documentation" width="49%"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/ProudAuth/proudauth-sdk-go"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-go.png" alt="ProudAuth SDK for Go" width="49%"></a>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-node"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-node.png" alt="ProudAuth SDK for Node.js" width="49%"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/ProudAuth/proudauth-sdk-dart"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-dart.png" alt="ProudAuth SDK for Dart" width="49%"></a>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-php"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-php.png" alt="ProudAuth SDK for PHP" width="49%"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/ProudAuth/proudauth-sdk-dotnet"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-dotnet.png" alt="ProudAuth SDK for .NET" width="49%"></a>
-  <a href="https://proudauth.com/docs/getting-started/quickstart/"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-start.png" alt="Quickstart: docker compose up -d" width="49%"></a>
+  <a href="https://proudauth.com/docs/getting-started/quickstart/"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/button-start-now.png" alt="Start now" width="320"></a>
 </p>
 
 <p align="center">
