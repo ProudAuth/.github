@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<defs>
+  <radialGradient id="g1" cx="78%" cy="50%" r="60%"><stop offset="0" stop-color="#1a5a43"/><stop offset=".55" stop-color="#0a2219"/><stop offset="1" stop-color="#06120e"/></radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#3ee6b0" stop-opacity=".55"/><stop offset="1" stop-color="#3ee6b0" stop-opacity="0"/></radialGradient>
+  <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8ffec"/><stop offset=".55" stop-color="#3ee6b0"/><stop offset="1" stop-color="#0f9a73"/></linearGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+</defs>
+<clipPath id="round"><rect width="800" height="400" rx="26"/></clipPath>
+<g clip-path="url(#round)">
+  <rect width="800" height="400" fill="url(#g1)"/>
+  <rect width="800" height="400" fill="url(#grid)"/>
+  <circle cx="640" cy="170" r="142" fill="url(#glow)"/><rect x="551.0" y="81.0" width="178" height="178" rx="45" fill="none" stroke="#3ee6b0" stroke-opacity=".28"/><rect x="565.0" y="95.0" width="150" height="150" rx="36" fill="url(#mint)"/><text x="640" y="193" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="800" font-size="63" fill="#06120e" letter-spacing="-1">TS</text>
+  <g transform="translate(44 40) scale(0.9375)"><path d="M6 5h13l7 7v15H6z" fill="url(#mint)"/><path d="M12 11h6a5 5 0 0 1 0 10h-3v5h-3zm3 3v4h3a2 2 0 0 0 0-4z" fill="#06120e"/></g>
+  <text x="84" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="#3ee6b0" letter-spacing="3.5">SDK</text>
+  <text x="46" y="170" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="62" fill="#ecfff7" letter-spacing="-2">Node.js</text>
+  <text x="48" y="226" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" fill="#c8ffec" fill-opacity=".82">TypeScript-first. Express, Fastify and</text><text x="48" y="257" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" fill="#c8ffec" fill-opacity=".82">node:http adapters.</text>
+  <path d="M48 318H752" stroke="#ffffff" stroke-opacity=".1"/>
+  <text x="48" y="358" font-family="SF Mono, Menlo, monospace" font-size="18" fill="#8fdcc0" fill-opacity=".8">ProudAuth/proudauth-sdk-node</text>
+  <g transform="translate(730 352)"><circle r="22" fill="#ffffff" fill-opacity=".05" stroke="#3ee6b0" stroke-opacity=".6"/><path d="M-8 0h15m-6-6 6 6-6 6" fill="none" stroke="#3ee6b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g>
+<rect x=".75" y=".75" width="798.5" height="398.5" rx="25.5" fill="none" stroke="#3ee6b0" stroke-opacity=".22" stroke-width="1.5"/>
+</svg>

@@ -3,7 +3,8 @@
 `profile/README.md` is the page at [github.com/ProudAuth](https://github.com/ProudAuth).
 
 `assets/` holds the brand kit used across the organization: a README banner
-and a social preview image for every repository, and the organization avatar.
+and a social preview image for every repository, the repository cards on the
+profile page, and the organization avatar.
 `brand/make_brand.py` regenerates them from code (needs `rsvg-convert`):
 
 ```sh

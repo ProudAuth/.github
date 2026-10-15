@@ -1,4 +1,4 @@
-"""ProudAuth brand kit: README banners, social previews and the org avatar.
+"""ProudAuth brand kit: README banners, social previews, profile cards and the org avatar.
 
 Usage: make_brand.py OUT_DIR   (needs rsvg-convert)
 """
@@ -113,4 +113,76 @@ avatar = f"""<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" vi
 </svg>"""
 (out / "avatar.svg").write_text(avatar)
 subprocess.run(["rsvg-convert", "-w", "1024", "-h", "1024", str(out / "avatar.svg"), "-o", str(out / "avatar.png")], check=True)
+# Profile cards: the repository grid on github.com/ProudAuth, two per row.
+MONO = "SF Mono, Menlo, monospace"
+CARDS = {
+    # slug: (eyebrow, title, line, tile, path)
+    "proudauth": ("IDENTITY SERVER", "proudauth", "Sign-in, organizations and access control in one Docker image.", "mark", "ProudAuth/proudauth"),
+    "proudauth-website": ("WEBSITE", "proudauth.com", "The site and documentation, rebuilt from every release.", "web", "ProudAuth/proudauth-website"),
+    "proudauth-sdk-go": ("SDK", "Go", "Verify tokens, sign users in, automate administration.", "Go", "ProudAuth/proudauth-sdk-go"),
+    "proudauth-sdk-node": ("SDK", "Node.js", "TypeScript-first. Express, Fastify and node:http adapters.", "TS", "ProudAuth/proudauth-sdk-node"),
+    "proudauth-sdk-dart": ("SDK", "Dart", "Verify tokens, sign users in, automate administration.", "Dart", "ProudAuth/proudauth-sdk-dart"),
+    "proudauth-sdk-php": ("SDK", "PHP", "Verify tokens, sign users in, automate administration.", "PHP", "ProudAuth/proudauth-sdk-php"),
+    "proudauth-sdk-dotnet": ("SDK", ".NET", "ASP.NET Core middleware, token verification and admin client.", "C#", "ProudAuth/proudauth-sdk-dotnet"),
+    "start": ("START NOW", "Quickstart", "Copy two files from the docs, fill in .env and start.", "term", "$ docker compose up -d"),
+}
+
+
+def wrap(text, limit):
+    lines, line = [], ""
+    for word in text.split():
+        if line and len(line) + 1 + len(word) > limit:
+            lines.append(line)
+            line = word
+        else:
+            line = f"{line} {word}".strip()
+    return lines + [line]
+
+
+def tile(kind, cx, cy, size):
+    half = size / 2
+    body = (f'<circle cx="{cx}" cy="{cy}" r="{size * 0.95:.0f}" fill="url(#glow)"/>'
+            f'<rect x="{cx - half - 14}" y="{cy - half - 14}" width="{size + 28}" height="{size + 28}" rx="{size * 0.3:.0f}" fill="none" stroke="#3ee6b0" stroke-opacity=".28"/>'
+            f'<rect x="{cx - half}" y="{cy - half}" width="{size}" height="{size}" rx="{size * 0.24:.0f}" fill="url(#mint)"/>')
+    if kind == "mark":
+        return body + mark(cx - size * 0.42, cy - size * 0.47, size * 0.84, fill="#06120e", ink="url(#mint)")
+    if kind == "web":
+        w, h = size * 0.56, size * 0.42
+        return body + (f'<rect x="{cx - w / 2:.0f}" y="{cy - h / 2:.0f}" width="{w:.0f}" height="{h:.0f}" rx="8" fill="none" stroke="#06120e" stroke-width="7"/>'
+                       f'<path d="M{cx - w / 2:.0f} {cy - h / 2 + 18:.0f}h{w:.0f}" stroke="#06120e" stroke-width="7"/>')
+    label = ">_" if kind == "term" else kind
+    font = MONO if kind == "term" else FONT
+    scale = {1: 0.5, 2: 0.42, 3: 0.33}.get(len(label), 0.27)
+    return body + (f'<text x="{cx}" y="{cy + size * scale * 0.36:.0f}" text-anchor="middle" font-family="{font}" font-weight="800" '
+                   f'font-size="{size * scale:.0f}" fill="#06120e" letter-spacing="-1">{label}</text>')
+
+
+def profile_card(eyebrow, title, line, kind, path):
+    w, h = 800, 400
+    text = "".join(f'<text x="48" y="{226 + i * 31}" font-family="{FONT}" font-size="22" fill="#c8ffec" fill-opacity=".82">{part}</text>'
+                   for i, part in enumerate(wrap(line, 38)[:2]))
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">
+{DEFS}
+<clipPath id="round"><rect width="{w}" height="{h}" rx="26"/></clipPath>
+<g clip-path="url(#round)">
+  <rect width="{w}" height="{h}" fill="url(#g1)"/>
+  <rect width="{w}" height="{h}" fill="url(#grid)"/>
+  {tile(kind, 640, 170, 150)}
+  {mark(44, 40, 30)}
+  <text x="84" y="62" font-family="{FONT}" font-weight="700" font-size="16" fill="#3ee6b0" letter-spacing="3.5">{eyebrow}</text>
+  <text x="46" y="170" font-family="{FONT}" font-weight="700" font-size="{62 if len(title) < 11 else 52}" fill="#ecfff7" letter-spacing="-2">{title}</text>
+  {text}
+  <path d="M48 318H752" stroke="#ffffff" stroke-opacity=".1"/>
+  <text x="48" y="358" font-family="{MONO}" font-size="18" fill="#8fdcc0" fill-opacity=".8">{path}</text>
+  <g transform="translate(730 352)"><circle r="22" fill="#ffffff" fill-opacity=".05" stroke="#3ee6b0" stroke-opacity=".6"/><path d="M-8 0h15m-6-6 6 6-6 6" fill="none" stroke="#3ee6b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</g>
+<rect x=".75" y=".75" width="{w - 1.5}" height="{h - 1.5}" rx="25.5" fill="none" stroke="#3ee6b0" stroke-opacity=".22" stroke-width="1.5"/>
+</svg>"""
+
+
+for slug, spec in CARDS.items():
+    path = out / f"card-{slug}.svg"
+    path.write_text(profile_card(*spec))
+    subprocess.run(["rsvg-convert", str(path), "-o", str(out / f"card-{slug}.png")], check=True)
+
 print("brand kit written to", out)

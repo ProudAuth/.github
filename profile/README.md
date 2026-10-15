@@ -32,21 +32,24 @@ docker compose up -d
 
 ## Repositories
 
-| Repository | What it is |
-| --- | --- |
-| **[proudauth](https://github.com/ProudAuth/proudauth)** | The identity server: OAuth 2.0 and OpenID Connect, passkeys and MFA, organizations and roles, in one Docker image |
-| **[proudauth-website](https://github.com/ProudAuth/proudauth-website)** | [proudauth.com](https://proudauth.com): the site and documentation, updated with every release |
+<p align="center">
+  <a href="https://github.com/ProudAuth/proudauth"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth.png" alt="proudauth: the identity server" width="49%"></a>
+  <a href="https://github.com/ProudAuth/proudauth-website"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-website.png" alt="proudauth-website: the site and documentation" width="49%"></a>
+</p>
 
-## SDKs
+<p align="center">
+  <a href="https://github.com/ProudAuth/proudauth-sdk-go"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-go.png" alt="ProudAuth SDK for Go" width="49%"></a>
+  <a href="https://github.com/ProudAuth/proudauth-sdk-node"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-node.png" alt="ProudAuth SDK for Node.js" width="49%"></a>
+</p>
 
-Verify tokens, sign users in and automate administration from your stack.
+<p align="center">
+  <a href="https://github.com/ProudAuth/proudauth-sdk-dart"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-dart.png" alt="ProudAuth SDK for Dart" width="49%"></a>
+  <a href="https://github.com/ProudAuth/proudauth-sdk-php"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-php.png" alt="ProudAuth SDK for PHP" width="49%"></a>
+</p>
 
-<p>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-go"><img alt="Go SDK" src="https://img.shields.io/badge/Go-SDK-3ee6b0?style=for-the-badge&logo=go&logoColor=3ee6b0&labelColor=06120e"></a>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-node"><img alt="Node.js SDK" src="https://img.shields.io/badge/Node.js-SDK-3ee6b0?style=for-the-badge&logo=nodedotjs&logoColor=3ee6b0&labelColor=06120e"></a>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-dart"><img alt="Dart SDK" src="https://img.shields.io/badge/Dart-SDK-3ee6b0?style=for-the-badge&logo=dart&logoColor=3ee6b0&labelColor=06120e"></a>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-php"><img alt="PHP SDK" src="https://img.shields.io/badge/PHP-SDK-3ee6b0?style=for-the-badge&logo=php&logoColor=3ee6b0&labelColor=06120e"></a>
-  <a href="https://github.com/ProudAuth/proudauth-sdk-dotnet"><img alt=".NET SDK" src="https://img.shields.io/badge/.NET-SDK-3ee6b0?style=for-the-badge&logo=dotnet&logoColor=3ee6b0&labelColor=06120e"></a>
+<p align="center">
+  <a href="https://github.com/ProudAuth/proudauth-sdk-dotnet"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-proudauth-sdk-dotnet.png" alt="ProudAuth SDK for .NET" width="49%"></a>
+  <a href="https://proudauth.com/docs/getting-started/quickstart/"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/card-start.png" alt="Quickstart: docker compose up -d" width="49%"></a>
 </p>
 
 <p align="center">
