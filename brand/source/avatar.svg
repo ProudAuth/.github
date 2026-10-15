@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs>
+  <radialGradient id="g1" cx="78%" cy="50%" r="60%"><stop offset="0" stop-color="#1a5a43"/><stop offset=".55" stop-color="#0a2219"/><stop offset="1" stop-color="#06120e"/></radialGradient>
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#3ee6b0" stop-opacity=".55"/><stop offset="1" stop-color="#3ee6b0" stop-opacity="0"/></radialGradient>
+  <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8ffec"/><stop offset=".55" stop-color="#3ee6b0"/><stop offset="1" stop-color="#0f9a73"/></linearGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".045"/></pattern>
+</defs>
+<rect width="512" height="512" fill="#06120e"/>
+<circle cx="256" cy="256" r="300" fill="url(#glow)"/>
+<rect width="512" height="512" fill="url(#grid)"/>
+<g transform="translate(66 62) scale(11.875)"><path d="M6 5h13l7 7v15H6z" fill="url(#mint)"/><path d="M12 11h6a5 5 0 0 1 0 10h-3v5h-3zm3 3v4h3a2 2 0 0 0 0-4z" fill="#06120e"/></g>
+</svg>
